@@ -1,0 +1,42 @@
+{
+    "name": "lloadout/laravel-macros",
+    "description": "With this Laravel macros you make some of the core components even better.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dieter Coopman",
+            "email": "dieter@deltasolutions.be"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0|^8.1",
+        "illuminate/collections": "^6|^7|^8",
+        "illuminate/support": "^6|^7|^8",
+        "illuminate/filesystem": "^6|^7|^8"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LLoadout\\LaravelMacros\\LaravelMacrosServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "LLoadout\\LaravelMacros\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LLoadout\\LaravelMacros\\Tests\\": "tests"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.23",
+        "phpunit/phpunit": "^9.5"
+    }
+}
