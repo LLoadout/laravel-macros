@@ -1,3 +1,9 @@
+![Downloads](https://img.shields.io/packagist/dt/lloadout/laravel-macros.svg?style=flat-square)
+
+<p align="center">
+    <img src="https://github.com/LLoadout/assets/blob/master/LLoadout_macros.png" width="500" title="LLoadout logo">
+</p>
+
 # Laravel macros
 
 This repository contains some useful Laravel macros.
@@ -9,6 +15,12 @@ This repository contains some useful Laravel macros.
     - [forSelectBox](#forselectbox)
 - [Filesystem macros](#filesystem-macros)
   -  [getFile](#getfile)
+
+# Installation
+
+```
+composer require lloadout/laravel-macros
+```
 
 ## Collection macros
 
