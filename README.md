@@ -15,6 +15,12 @@ This repository contains some useful Laravel macros.
 - [Filesystem macros](#filesystem-macros)
   -  [getFile](#getfile)
 
+# Installation
+
+```
+composer require lloadout/laravel-macros
+```
+
 ## Collection macros
 
 ### whereContains
