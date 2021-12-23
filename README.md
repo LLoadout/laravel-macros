@@ -15,6 +15,8 @@ This repository contains some useful Laravel macros.
     - [forSelectBox](#forselectbox)
 - [Filesystem macros](#filesystem-macros)
   -  [getFile](#getfile)
+- [String macros](#stringmacros)
+  -  [capitalizeWords](#capitalizewords)
 
 # Installation
 
@@ -76,4 +78,14 @@ Get a file by its path, returning a SplFileInfo object.
 
 ```php
 $file = File::getFile($path_to_file); // this returns a SplFileInfo object.
+```
+
+## String macros
+
+### capitalizeWords
+
+Capitalize every word in a sentence.
+
+```
+Str::capitalizeWords('laravel macros'); // Laravel Macros
 ```

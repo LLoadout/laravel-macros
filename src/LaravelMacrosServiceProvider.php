@@ -27,6 +27,9 @@ class LaravelMacrosServiceProvider extends ServiceProvider
             'Illuminate\Support\Facades\File' => [
                 'getFile' => \LLoadout\LaravelMacros\FileSystemMacros\getFile::class,
             ],
+            'Illuminate\Support\Str' => [
+                'capitalizeWords' => \LLoadout\LaravelMacros\StrMacros\capitalizeWords::class,
+            ],
         ];
     }
 }

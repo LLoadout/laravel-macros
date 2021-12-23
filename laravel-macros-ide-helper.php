@@ -14,6 +14,11 @@ namespace Illuminate\Support {
         /* @return array */
         public function forSelectBox(string $key, string $value, bool $addempty){}
     }
+    class Str
+    {
+        /* @return string */
+        public static function capitalizeWords(string $words){}
+    }
 }
 
 namespace Illuminate\Support\Facades {
