@@ -53,7 +53,7 @@ return $collection->whereEndsWith('name','C'); //{"3":{"id":4,"name":"ABC"}}
 
 ### forSelectBox
 
-Sorts the items by its lowercase value keys them by the provided key.  By default this macro adds an empty value to the result array, this can be prevented by
+Sorts the items by its lowercase value, keys them by the provided key.  By default this macro adds an empty value to the result array, this can be prevented by
 the third parameter `$addempty`
 
 ```php
