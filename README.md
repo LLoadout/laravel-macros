@@ -1,3 +1,5 @@
+![Downloads](https://img.shields.io/packagist/dt/lloadout/laravel-macros.svg?style=flat-square)
+
 # Laravel macros
 
 This repository contains some useful Laravel macros.
