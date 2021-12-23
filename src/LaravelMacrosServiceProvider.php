@@ -22,6 +22,7 @@ class LaravelMacrosServiceProvider extends ServiceProvider
                 'whereStartsWith' => \LLoadout\LaravelMacros\CollectionMacros\whereStartsWith::class,
                 'whereEndsWith' => \LLoadout\LaravelMacros\CollectionMacros\whereEndsWith::class,
                 'whereContains' => \LLoadout\LaravelMacros\CollectionMacros\whereContains::class,
+                'forSelectBox' => \LLoadout\LaravelMacros\CollectionMacros\forSelectBox::class,
             ],
             'Illuminate\Support\Facades\File' => [
                 'getFile' => \LLoadout\LaravelMacros\FileSystemMacros\getFile::class,

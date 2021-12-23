@@ -59,4 +59,13 @@ class CollectionsTests extends TestCase
         $this->assertCount(1, $c->whereContains('name', 'AbC', false));
         $this->assertCount(0, $c->whereContains('name', 'd', false));
     }
+
+    public function testForSelectBox()
+    {
+        $c = collect([['id' => 1, 'firstname' => 'D', 'name' => 'A'], ['id' => 2, 'firstname' => 'C', 'name' => 'B'], ['id' => 3, 'firstname' => 'B', 'name' => 'C'], ['id' => 4, 'firstname' => 'A', 'name' => 'D']]);
+        $this->assertEquals([0 => '', 1 => 'A', 2 => 'B', 3 => 'C', 4 => 'D'], $c->forSelectBox('id', 'name'));
+        $this->assertEquals([1 => 'A', 2 => 'B', 3 => 'C', 4 => 'D'], $c->forSelectBox('id', 'name', false));
+        $this->assertEquals([0 => '', 4 => 'A', 3 => 'B', 2 => 'C', 1 => 'D'], $c->forSelectBox('id', 'firstname'));
+        $this->assertEquals([4 => 'A', 3 => 'B', 2 => 'C', 1 => 'D'], $c->forSelectBox('id', 'firstname', false));
+    }
 }

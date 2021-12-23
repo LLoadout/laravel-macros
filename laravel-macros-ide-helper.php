@@ -1,13 +1,19 @@
 <?php
 
 namespace Illuminate\Support {
-    /**
-     * Collection
-     * @method Collection whereContains
-     * @method Collection whereEndsWith
-     * @method Collection whereStartsWith
-  */
-    class Collection {}
+    class Collection {
+        /* @return Collection */
+        public function whereContains (string $key, string $value, bool $casesensitive = true){}
+
+        /* @return Collection */
+        public function whereEndsWith (string $key, string $value, bool $casesensitive = true){}
+
+        /* @return Collection */
+        public function whereStartsWith (string $key, string $value, bool $casesensitive = true){}
+
+        /* @return array */
+        public function forSelectBox(string $key, string $value, bool $addempty){}
+    }
 }
 
 namespace Illuminate\Support\Facades {
