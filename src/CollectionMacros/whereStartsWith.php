@@ -1,21 +1,27 @@
-<?php namespace LLoadout\LaravelMacros\CollectionMacros;
+<?php
+
+namespace LLoadout\LaravelMacros\CollectionMacros;
+
+use Illuminate\Support\HigherOrderCollectionProxy;
+
+/**
+ * Filter items that begin with the given string.
+ * @param string $key
+ * @param string $value
+ * @param bool $casesensitive
+ * @property-read HigherOrderCollectionProxy $each *
+ * @mixin \Illuminate\Support\Collection
+ *
+ * @return mixed
+ *
+
+ */
 
 class whereStartsWith
 {
-
-    /**
-     * Filter items that begin with the given string.
-     *
-     * @param string $key
-     * @param mixed $value
-     * @param bool $casesensitive
-     *
-     * @return mixed
-     */
-
-    public function __invoke()
+    public function __invoke(): \Closure
     {
-        return function ($key, $value, $casesensitive = true) {
+        return function (string $key, string $value, bool $casesensitive = true) {
             return $this->filter(function ($item) use ($key, $value, $casesensitive) {
                 $comparer = ($casesensitive) ? 'strncmp' : 'strncasecmp';
 

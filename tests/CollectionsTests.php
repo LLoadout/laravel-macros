@@ -1,4 +1,6 @@
-<?php namespace LLoadout\LaravelMacros\Tests;
+<?php
+
+namespace LLoadout\LaravelMacros\Tests;
 
 class CollectionsTests extends TestCase
 {
@@ -23,7 +25,6 @@ class CollectionsTests extends TestCase
         $this->assertCount(2, $c->whereStartsWith('name', 'aB', false));
         $this->assertCount(1, $c->whereStartsWith('name', 'Abc', false));
     }
-
 
     public function testWhereEndsWith()
     {

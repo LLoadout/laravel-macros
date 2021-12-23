@@ -1,25 +1,28 @@
-<?php namespace LLoadout\LaravelMacros\CollectionMacros;
+<?php
+
+namespace LLoadout\LaravelMacros\CollectionMacros;
+
+/**
+ * Filter items that contain the given string.
+ *
+ * @param string $key
+ * @param string $value
+ * @param bool $casesensitive
+ *
+ * @mixin \Illuminate\Support\Collection
+ *
+ * @return mixed
+ */
 
 class whereContains
 {
-
-    /**
-     * Filter items that contain the given string.
-     *
-     * @param string $key
-     * @param mixed $value
-     * @param bool $casesensitive
-     *
-     * @return mixed
-     */
-
-    public function __invoke()
+    public function __invoke(): \Closure
     {
-        return function ($key, $value, $casesensitive = true) {
+        return function (string $key, string $value, bool $casesensitive = true) {
             return $this->filter(function ($item) use ($key, $value, $casesensitive) {
                 $haystack = data_get($item, $key);
                 $haystack = ($casesensitive) ? $haystack : strtolower($haystack);
-                $needle   = ($casesensitive) ? $value : strtolower($value);
+                $needle = ($casesensitive) ? $value : strtolower($value);
 
                 return str_contains($haystack, $needle);
             });

@@ -1,4 +1,6 @@
-<?php namespace LLoadout\LaravelMacros\Tests;
+<?php
+
+namespace LLoadout\LaravelMacros\Tests;
 
 use LLoadout\LaravelMacros\LaravelMacrosServiceProvider;
 use Orchestra\Testbench\TestCase as TestBench;

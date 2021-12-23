@@ -1,26 +1,28 @@
-<?php namespace LLoadout\LaravelMacros\CollectionMacros;
+<?php
+
+namespace LLoadout\LaravelMacros\CollectionMacros;
+
+/**
+ * Filter items that end with the given string.
+ *
+ * @param string $key
+ * @param string $value
+ * @param bool $casesensitive
+ *
+ * @mixin \Illuminate\Support\Collection
+ *
+ * @return mixed
+ */
 
 class whereEndsWith
 {
-
-    /**
-     * Filter items that end with the given string.
-     *
-     * @param string $key
-     * @param mixed $value
-     * @param bool $casesensitive
-     *
-     * @return mixed
-     */
-
-    public function __invoke()
+    public function __invoke(): \Closure
     {
-        return function ($key, $value, $casesensitive = true) {
+        return function (string $key, string $value, bool $casesensitive = true) {
             return $this->filter(function ($item) use ($key, $value, $casesensitive) {
                 $comparer = ($casesensitive) ? 'strncmp' : 'strncasecmp';
 
                 return $comparer(strrev(data_get($item, $key)), strrev($value), strlen($value)) === 0;
-
             });
         };
     }
