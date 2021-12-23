@@ -21,6 +21,10 @@
     "illuminate/filesystem": "^6|^7|^8",
     "illuminate/support": "^6|^7|^8"
   },
+  "require-dev": {
+    "nunomaduro/larastan": "^1.0",
+    "orchestra/testbench": "^6.23"
+  },
   "extra": {
     "laravel": {
       "providers": [
@@ -48,11 +52,6 @@
     "phpstan": [
       "./vendor/bin/phpstan"
     ]
-  },
-  "require-dev": {
-    "nunomaduro/larastan": "^1.0",
-    "orchestra/testbench": "^6.23",
-    "phpunit/phpunit": "^9.5"
   },
   "minimum-stability": "dev",
   "prefer-stable": true
