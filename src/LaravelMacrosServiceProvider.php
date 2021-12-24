@@ -29,6 +29,7 @@ class LaravelMacrosServiceProvider extends ServiceProvider
             ],
             'Illuminate\Support\Str' => [
                 'capitalizeWords' => \LLoadout\LaravelMacros\StrMacros\capitalizeWords::class,
+                'highlightWords' => \LLoadout\LaravelMacros\StrMacros\highlightWords::class,
             ],
         ];
     }

@@ -18,6 +18,9 @@ namespace Illuminate\Support {
     {
         /* @return string */
         public static function capitalizeWords(string $words){}
+
+        /* @return string */
+        public static function highlightWords(string $sentence,string|array $words, string $highlighter = '<b>'){}
     }
 }
 
