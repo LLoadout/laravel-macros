@@ -93,7 +93,7 @@ Str::capitalizeWords('laravel macros'); // Laravel Macros
 
 ### highlightWords
 
-Highlight the given words in a sentence.  The words are default highlighted with a `<b>` tag but you can pass a third parameter `<highlighter>` to overrule this.  The `$words` argument can be a single word or an array of words.
+Highlight the given words in a sentence.  The words are default highlighted with a `<b>` tag but you can pass a third parameter `$highlighter` to overrule this.  The `$words` argument can be a single word or an array of words.
 
 ```php
 Str::highlightWords("welcome to Laravel-macros",'Laravel-macros'); // welcome to <b>Laravel-macros</b>
