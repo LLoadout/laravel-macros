@@ -117,7 +117,7 @@ Convert object/json to array
 ```
  $class = new \stdClass();
  $class->name = "Lloadout";
- Convert::toArray($class); // ["name" => "Lloadout"]
+ Variable::toArray($class); // ["name" => "Lloadout"]
 ```
 
 Advanced example
@@ -140,7 +140,7 @@ Advanced example
   //with the macro
   
   $variable = [(object) ['id' => 1], ['id' => 4]];
-  Convert::toArray($variable); 
+  Variable::toArray($variable); 
   
   // will convert to 
   array:2 [▼
@@ -160,7 +160,7 @@ Convert object/array to json
 ```
  $class = new \stdClass();
  $class->name = "Lloadout";
- Convert::toJson($class); // {"name":"Lloadout"}
+ Variable::toJson($class); // {"name":"Lloadout"}
 ```
 
 ### toObject
@@ -169,7 +169,7 @@ Convert json/array to object
 
 ```
  $array = ['name' => 'Lloadout'];
- Convert::toObject($array); // {#750 ▼  +"name": "Lloadout" }
+ Variable::toObject($array); // {#750 ▼  +"name": "Lloadout" }
 ```
 
 ### when
