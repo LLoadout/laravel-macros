@@ -6,7 +6,7 @@ class Variable
 {
     private static function variable(mixed $something): \stdClass
     {
-        $something = !self::isJson($something) ? json_encode($something) : $something;
+        $something = ! self::isJson($something) ? json_encode($something) : $something;
 
         return (object)json_decode($something);
     }
@@ -65,6 +65,7 @@ class Variable
         if ($variable === $hasValue) {
             $variable = $newValue;
         }
+
         return $variable;
     }
 }

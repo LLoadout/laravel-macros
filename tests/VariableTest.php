@@ -2,7 +2,6 @@
 
 namespace LLoadout\LaravelMacros\Tests;
 
-use Illuminate\Support\Str;
 use LLoadout\LaravelMacros\VariableMacros\Variable;
 
 class VariableTest extends TestCase
@@ -51,15 +50,15 @@ class VariableTest extends TestCase
         $this->assertIsArray($test['b']);
     }
 
-    public function testWhen(){
+    public function testWhen()
+    {
         $variable = "";
-        $variable = Variable::when($variable,"",null);
+        $variable = Variable::when($variable, "", null);
         $this->assertNull($variable);
 
         $variable = "-";
-        $variable = Variable::when($variable,"",null);
+        $variable = Variable::when($variable, "", null);
 
-        $this->assertEquals('-',$variable);
-
+        $this->assertEquals('-', $variable);
     }
 }
