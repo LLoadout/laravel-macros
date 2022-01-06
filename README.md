@@ -174,8 +174,8 @@ Convert json/array to object
 
 ### when
 
-This macro will check if a variable has a given value, if so the value will be changed to a new value.  First parameter is the value 
-second the value to check on and the third is the new value to assign.
+This macro will check if a variable has a given value, if so the value will be changed to a new value.  First parameter is the given variable, 
+second parameter is the value to check on and the third parameter is the new value to assign.
 
 ```
  $var = "";
