@@ -168,5 +168,5 @@ Convert json/array to object
 
 ```
  $array = ['name' => 'Lloadout'];
- dd(Convert::toObject($array)); // {#750 ▼  +"name": "Lloadout" }
+ Convert::toObject($array); // {#750 ▼  +"name": "Lloadout" }
 ```
