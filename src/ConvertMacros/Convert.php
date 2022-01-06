@@ -15,7 +15,7 @@ class Convert
      * @param mixed $something
      * @return bool
      */
-    private static function isJson($something) : bool
+    private static function isJson($something): bool
     {
         if (is_array($something) || is_object($something)) {
             return false;
