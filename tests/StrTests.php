@@ -12,7 +12,7 @@ class StrTests extends TestCase
         $this->createDummyprovider()->register();
     }
 
-    public function testGetFile()
+    public function testCapitalizeWords()
     {
         $this->assertEquals('Laravel Macros', Str::capitalizeWords('laravel macros'));
         $this->assertEquals('Dieter Coopman', Str::capitalizeWords('dieter coopman'));

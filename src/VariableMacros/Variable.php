@@ -1,12 +1,12 @@
 <?php
 
-namespace LLoadout\LaravelMacros\ConvertMacros;
+namespace LLoadout\LaravelMacros\VariableMacros;
 
-class Convert
+class Variable
 {
     private static function variable(mixed $something): \stdClass
     {
-        $something = ! self::isJson($something) ? json_encode($something) : $something;
+        $something = !self::isJson($something) ? json_encode($something) : $something;
 
         return (object)json_decode($something);
     }
@@ -50,6 +50,21 @@ class Convert
      */
     public static function toObject($variable): \stdClass
     {
-        return (object) json_decode(json_encode(self::variable($variable)));
+        return (object)json_decode(json_encode(self::variable($variable)));
+    }
+
+    /**
+     *
+     * @param mixed $variable
+     * @param mixed $hasValue
+     * @param mixed $newValue
+     * @return mixed
+     */
+    public static function when($variable, $hasValue, $newValue)
+    {
+        if ($variable === $hasValue) {
+            $variable = $newValue;
+        }
+        return $variable;
     }
 }

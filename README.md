@@ -18,10 +18,11 @@ This repository contains some useful Laravel macros.
 - [String macros](#stringmacros)
   - [capitalizeWords](#capitalizewords)
   - [highlightWords](#highlightwords)
-- [Convert macros](#convertmacros)
+- [Variable macros](#variablemacros)
   - [toJson](#tojson)
   - [toArray](#toarray)
   - [toObject](#toobject)
+  - [when](#when)
 
 # Installation
 
@@ -105,9 +106,9 @@ Str::highlightWords("welcome to Laravel-macros",'Laravel-macros'); // welcome to
 Str::highlightWords("welcome to Laravel-macros",['welcome','Laravel-macros']); // <b>welcome</b> to <b>Laravel-macros</b>
 ```
 
-## Convert macros 
+## Variable macros 
 
-This macros can convert arrays / object / json to one of array / object / json , particularly handy for converting mixed variables, for example arrays with objects to pure arrays or objects.
+This macros can convert arrays / object / json to one of array / object / json, particularly handy for converting mixed variables, for example arrays with objects to pure arrays or objects.
 
 ### toArray
 
@@ -122,7 +123,7 @@ Convert object/json to array
 Advanced example
 
 ```
-  // without this macro , cast mixed content to an array  
+  // without this macro, cast mixed content to an array  
   $variable = (array) [(object) ['id' => 1], ['id' => 4]];  
    
   // will convert to
@@ -169,4 +170,15 @@ Convert json/array to object
 ```
  $array = ['name' => 'Lloadout'];
  Convert::toObject($array); // {#750 ▼  +"name": "Lloadout" }
+```
+
+### when
+
+This macro will check if a variable has a given value, if so the value will be changed to a new value.  First parameter is the value 
+second the value to check on and the third is the new value to assign.
+
+```
+ $var = "";
+ $var = Variable::when($var, "", null);
+ dd($var); // null
 ```
