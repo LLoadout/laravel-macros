@@ -16,8 +16,12 @@ This repository contains some useful Laravel macros.
 - [Filesystem macros](#filesystem-macros)
   -  [getFile](#getfile)
 - [String macros](#stringmacros)
-  -  [capitalizeWords](#capitalizewords)
-  -  [highlightWords](#highlightwords)
+  - [capitalizeWords](#capitalizewords)
+  - [highlightWords](#highlightwords)
+- [Convert macros](#convertmacros)
+  - [toJson](#tojson)
+  - [toArray](#toarray)
+  - [toObject](#toobject)
 
 # Installation
 
@@ -99,4 +103,70 @@ Highlight the given words in a sentence.  The words are default highlighted with
 Str::highlightWords("welcome to Laravel-macros",'Laravel-macros'); // welcome to <b>Laravel-macros</b>
 
 Str::highlightWords("welcome to Laravel-macros",['welcome','Laravel-macros']); // <b>welcome</b> to <b>Laravel-macros</b>
+```
+
+## Convert macros 
+
+This macros can convert arrays / object / json to one of array / object / json , particularly handy for converting mixed variables, for example arrays with objects to pure arrays or objects.
+
+### toArray
+
+Convert object/json to array
+
+```
+ $class = new \stdClass();
+ $class->name = "Lloadout";
+ Convert::toArray($class); // ["name" => "Lloadout"]
+```
+
+Advanced example
+
+```
+  // without this macro , cast mixed content to an array  
+  $variable = (array) [(object) ['id' => 1], ['id' => 4]];  
+   
+  // will convert to
+   
+  array:4 [▼
+    0 => {#750 ▼
+      +"id": 1
+    }  
+    1 => array:1 [▼
+      "id" => 4
+    ]
+  ]
+  
+  //with the macro
+  
+  $variable = [(object) ['id' => 1], ['id' => 4]];
+  Convert::toArray($variable); 
+  
+  // will convert to 
+  array:2 [▼
+  0 => array:1 [▼
+    "id" => 1
+  ]
+  1 => array:1 [▼
+    "id" => 4
+  ]
+]
+```
+
+### toJson
+
+Convert object/array to json
+
+```
+ $class = new \stdClass();
+ $class->name = "Lloadout";
+ Convert::toJson($class); // {"name":"Lloadout"}
+```
+
+### toObject
+
+Convert json/array to object
+
+```
+ $array = ['name' => 'Lloadout'];
+ dd(Convert::toObject($array)); // {#750 ▼  +"name": "Lloadout" }
 ```

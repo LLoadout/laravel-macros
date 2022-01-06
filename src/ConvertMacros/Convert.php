@@ -4,23 +4,18 @@ namespace LLoadout\LaravelMacros\ConvertMacros;
 
 class Convert
 {
-    public function __construct(\stdClass $object)
+    private static function variable(mixed $something): \stdClass
     {
-        $this->object = $object;
+        $something = ! self::isJson($something) ? json_encode($something) : $something;
+
+        return (object)json_decode($something);
     }
 
     /**
      * @param mixed $something
-     * @return object
+     * @return bool
      */
-    public static function variable(mixed $something): self
-    {
-        $something = ! self::isJson($something) ? json_encode($something) : $something;
-
-        return new convert((object)json_decode($something));
-    }
-
-    public static function isJson($something)
+    private static function isJson($something) : bool
     {
         if (is_array($something) || is_object($something)) {
             return false;
@@ -31,26 +26,30 @@ class Convert
     }
 
     /**
+     * @param mixed $variable
      * @return array
      */
-    public function toArray(): array
+    public static function toArray($variable): array
     {
-        return json_decode(json_encode($this->object), true);
+        return json_decode(json_encode(self::variable($variable)), true);
     }
 
     /**
+     * @param mixed $variable
      * @return string
      */
-    public function toJson(): string
+    public static function toJson($variable): string
     {
-        return json_encode($this->object);
+        return json_encode(self::variable($variable));
     }
 
     /**
+     *
+     * @param mixed $variable
      * @return \stdClass
      */
-    public function toObjects(): \stdClass
+    public static function toObject($variable): \stdClass
     {
-        return (object) json_decode(json_encode($this->object));
+        return (object) json_decode(json_encode(self::variable($variable)));
     }
 }

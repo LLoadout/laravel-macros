@@ -14,40 +14,39 @@ class ConvertTest extends TestCase
 
     public function testObjectAsInput()
     {
-
         $test = new \stdClass();
         $test->name = "Coopman";
         $test->firstname = "Dieter";
 
-        $this->assertJson(Convert::variable($test)->toJson());
-        $this->assertIsArray(Convert::variable($test)->toArray());
-        $this->assertIsObject(Convert::variable($test)->toObjects());
+        $this->assertJson(Convert::toJson($test));
+        $this->assertIsArray(Convert::toArray($test));
+        $this->assertIsObject(Convert::toObject($test));
     }
 
     public function testArrayAsInput()
     {
         $test = ["name" => "Coopman", "firstname" => "Dieter"];
 
-        $this->assertJson(Convert::variable($test)->toJson());
-        $this->assertIsArray(Convert::variable($test)->toArray());
-        $this->assertIsObject(Convert::variable($test)->toObjects());
+        $this->assertJson(Convert::toJson($test));
+        $this->assertIsArray(Convert::toArray($test));
+        $this->assertIsObject(Convert::toObject($test));
     }
 
     public function testJsonAsInput()
     {
         $test = '{"name":"Coopman","firstname":"Dieter"}';
 
-        $this->assertJson(Convert::variable($test)->toJson());
-        $this->assertIsArray(Convert::variable($test)->toArray());
-        $this->assertIsObject(Convert::variable($test)->toObjects());
+        $this->assertJson(Convert::toJson($test));
+        $this->assertIsArray(Convert::toArray($test));
+        $this->assertIsObject(Convert::toObject($test));
     }
 
-    public function testNested(){
+    public function testNested()
+    {
         $test = (array)["test" => "a", "b" => (object) ['name' => 'test']];
         $this->assertIsObject($test['b']);
 
-        $test = Convert::variable($test)->toArray();
+        $test = Convert::toArray($test);
         $this->assertIsArray($test['b']);
     }
-
 }
