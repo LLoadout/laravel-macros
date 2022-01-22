@@ -15,7 +15,7 @@
     }
   ],
   "require": {
-    "php": "^7.4|^8.0",
+    "php": "^7.4|^8.0|^8.1",
     "friendsofphp/php-cs-fixer": "^3.4",
     "illuminate/collections": "^6|^7|^8|^9",
     "illuminate/filesystem": "^6|^7|^8|^9",
